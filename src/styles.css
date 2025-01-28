@@ -1,0 +1,239 @@
+body { 
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Arial Narrow Bold', sans-serif;
+  line-height: 1.5;
+  font-weight: 800;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #000 60%, #111);
+}
+
+.timers {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.timer-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+}
+
+.timer-edit p{
+  font-size: 1.1em;
+}
+
+.timer-change {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-change button{
+  margin: 0 10px
+}  
+
+.button-dissabled {
+  transition:none;
+  animation:none;
+  color: #3d633d;
+  cursor:auto
+
+}
+
+.button-dissabled:hover {
+  border: 1px solid transparent;
+}
+
+.clock-block {
+  display: flex;
+  position: relative;
+  width: 650px;
+  height: 180px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #222;
+  box-shadow: 0 0 20px #000, inset 0 0 10px #444;
+}
+
+.clock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.custom-segment {
+  position: absolute;
+  top: 62%;
+  left: 12.7%;
+  width: 40px;
+  height: 8px;
+  background-color: red;
+  box-shadow: 0 0 10px red;
+  clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 15.5% 100%, 0px 30%, 5.5% 0%);
+  transform: rotate(95deg);
+}
+
+
+.displayblockleft{
+  margin-right: -14px;
+  margin-left: -14px;}
+
+.display {
+  padding: 0
+}
+
+.dots {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 40px 0px;
+  height: 50px; /* Adjust height to match your numbers */
+  width: 0.5rem; /* Width of the dots */
+}
+
+.dots::before,
+.dots::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0.5rem; /* Size of each dot */
+  background-color: red; /* Dot color */
+  border-radius: 50%; /* Makes the dots circular */
+  box-shadow: 
+    0 0 5px red,
+    0 0 10px red; /* Glow effect */
+}
+
+.controls {
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ align-items: center;
+ margin-top: 48px;
+}
+
+.controls button{
+  margin: 0 75px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@keyframes flicker {
+  0%, 100% { text-shadow: 0 0 4px #63ff6340, 0 0 8px #63ff6340, 0 0 16px #63ff6340, 0 0 32px #63ff6340; }
+  50% { text-shadow: 0 0 3px #63ff6340, 0 0 7px #63ff6340, 0 0 15px #63ff6340, 0 0 30px #63ff6340; }
+}
+
+button {
+  border-radius: 8px;
+  font-family: 'Arial Narrow Bold', sans-serif;
+  color: #98FB98;
+  font-weight: 900;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.25em;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  animation: flicker 1s infinite alternate;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+@media (orientation: portrait) {
+  .clock-block {
+    display: flex;
+    position: relative;
+    width: 320px;
+    height: 100px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #222;
+    box-shadow: 0 0 20px #000, inset 0 0 10px #444;
+  }
+
+  .displayblockleft{
+    margin-right: -30px;
+    margin-left: -30px;
+  }
+
+  .custom-segment {
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    width: 20px;
+    height: 4px;
+  }
+
+  .dots {
+    height: 50px;
+    padding-top: 50px;
+    width: 0.25rem;
+  }
+
+  .dots::before,
+  .dots::after {
+    height: 0.25rem;
+  }
+
+  .timer-edit {
+    width: 160px;
+  }
+
+  .timer-edit p{
+    font-size: 0.75em;
+  }
+
+  button {
+    font-size: 0.8em;
+  }
+
+  .controls button{
+    margin: 0 37px;
+  }
+
+}
