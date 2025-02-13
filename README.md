@@ -1,5 +1,5 @@
 # Session-Break timer
----
+
 Deployed at https://sessionbreaktimerjj.vercel.app
                                                                                                                                                
 Time management application for planning and controlling regular "session" and "break" times. The timer automatically restarts making it ideal for working, studying, excercizing, among other activities. Users can set custom durations for both sessions and breaks to suit their needs. It comes by default with a 25+5 set inspired by the Pomodoro technique. 
